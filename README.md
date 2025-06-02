@@ -59,4 +59,7 @@ felaktig data i body till servern.
 
 Inlämning sker på Canvas med en länk till ditt Github repo med din kod senast **20/6 23:59**.
 
+## Redovisning
+
+Det sker vecka 25, tisdag, onsdag och torsdag, max 20 min per student.
 
