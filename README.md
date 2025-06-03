@@ -163,3 +163,16 @@ bcryptjs
 jsonwebtoken
 
 dotenv
+
+## 🧾 Swagger API Documentation
+
+This project includes auto-generated API documentation using Swagger.
+
+- Access URL: [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
+
+### 🔐 How to Use with JWT Authentication
+
+1. Obtain a token via `/api/user/login`
+2. Click the **Authorize** button in the top right corner of the Swagger UI
+3. Enter your token in the format: `Bearer <your JWT token>`
+4. You can now test and interact with the protected API endpoints
