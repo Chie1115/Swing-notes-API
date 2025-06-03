@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Swing Notes API project",
   "main": "index.js",
-  
+   "type": "module",
+
 
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "jest"
+    "test": "jest --config=config/jest.config.cjs"
+    
   },
   "repository": {
     "type": "git",
