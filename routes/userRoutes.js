@@ -26,7 +26,7 @@ import { signup, login } from '../controllers/userController.js';
  *                 example: shikachie@gmail.com
  *               password:
  *                 type: string
- *                 example: password123
+ *                 example: shikachie15
  *     responses:
  *       201:
  *         description: User created successfully
@@ -55,7 +55,7 @@ import { signup, login } from '../controllers/userController.js';
  *                 example: shikachie@gmail.com
  *               password:
  *                 type: string
- *                 example: password123
+ *                 example: shikachie15
  *     responses:
  *       200:
  *         description: Login successful, returns JWT token

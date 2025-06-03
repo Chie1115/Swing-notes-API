@@ -46,7 +46,7 @@ export async function updateNote(req, res) {
 
 export async function deleteNote(req, res) {
   try {
-    const { id } = req.body;
+    const { id } = req.query;
     if (!id) return res.status(400).json({ message: 'ID required' });
 
     const deleted = await deleteNoteById(req.user.id, id);
