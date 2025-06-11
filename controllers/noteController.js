@@ -61,10 +61,10 @@ export async function deleteNote(req, res) {
 
 export async function searchNotes(req, res) {
   try {
-    const { query } = req.query;
-    if (!query) return res.status(400).json({ message: 'Search query missing' });
+    const { title } = req.query;
+    if (!title) return res.status(400).json({ message: 'Search query missing' });
 
-    const results = await searchNotesByTitle(req.user.id, query);
+    const results = await searchNotesByTitle(req.user.id, title);
     res.json(results);
   } catch (error) {
     console.error(error);
