@@ -1,5 +1,7 @@
+了解です！
+修正提案を反映したREADMEの完全版を作りました。どうぞ：
 
-````
+````markdown
 # 📝 Swing Notes API
 
 A RESTful API for saving and managing notes, created as an individual assignment for the Backendutveckling course at Chas Academy.
@@ -86,8 +88,8 @@ Authorization: Bearer <your_token>
   "id": "string",
   "title": "string (max 50 chars)",
   "text": "string (max 300 chars)",
-  "createdAt": "date",
-  "modifiedAt": "date"
+  "created_at": "date",
+  "modified_at": "date"
 }
 ```
 
@@ -98,7 +100,7 @@ Authorization: Bearer <your_token>
 API documentation is available at:
 
 ```
-http://localhost:3000/api/docs
+http://localhost:3000/api-docs
 ```
 
 ---
@@ -107,7 +109,7 @@ http://localhost:3000/api/docs
 
 * Node.js + Express
 * PostgreSQL
-* Sequelize
+* pg (node-postgres)
 * bcryptjs
 * JSON Web Token (JWT)
 * Swagger
@@ -119,5 +121,4 @@ http://localhost:3000/api/docs
 Chie – Student at Chas Academy
 🔗 GitHub: [@Chie1115](https://github.com/Chie1115)
 
----
-
+```

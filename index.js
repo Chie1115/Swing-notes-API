@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import noteRoutes from './routes/noteRoutes.js';
 import { authenticateToken } from './middlewares/authMiddleware.js';
-import { swaggerUi, specs } from './swagger/swagger.js'; 
+import { swaggerUi, specs } from './swagger/swagger.js';
 
 dotenv.config();
 
@@ -14,11 +14,13 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// ルーティング
+// Public routes
 app.use('/api/user', userRoutes);
+
+// Protected routes
 app.use('/api/notes', authenticateToken, noteRoutes);
 
-// Swaggerのルーティング
+// Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get('/', (req, res) => {
