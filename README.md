@@ -1,7 +1,4 @@
-了解です！
-修正提案を反映したREADMEの完全版を作りました。どうぞ：
 
-````markdown
 # 📝 Swing Notes API
 
 A RESTful API for saving and managing notes, created as an individual assignment for the Backendutveckling course at Chas Academy.
