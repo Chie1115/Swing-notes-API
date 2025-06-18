@@ -73,10 +73,11 @@ const options = {
             id: { type: 'string', description: 'ID of the note to update.' },
             title: { type: 'string', maxLength: 50, description: 'Updated title.' },
             text: { type: 'string', maxLength: 300, description: 'Updated content text.' },
-          },
-          required: ['id', 'title', 'text'],
-        },
-
+           created_at: { type: 'string', format: 'date-time', description: 'Original creation timestamp.' },
+           modified_at: { type: 'string', format: 'date-time', description: 'Last modified timestamp.' },
+    },
+          required: ['id', 'title', 'text', 'created_at', 'modified_at'],
+    },
         // Used for error responses
         ErrorResponse: {
           type: "object",

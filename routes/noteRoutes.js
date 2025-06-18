@@ -157,6 +157,6 @@ router.delete('/', deleteNote);
  *       401:
  *         description: Unauthorized
  */
-router.get('/search', searchNotes);  // Search notes by title for the logged-in user
+router.get('/search', authenticateToken, searchNotes);// Search notes by title for the logged-in user
 
 export default router;

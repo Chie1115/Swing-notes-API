@@ -40,11 +40,11 @@ export async function createNote(req, res) {
 // Update an existing note (owned by the logged-in user)
 export async function updateNote(req, res) {
   try {
-    const { id, title, text, createdAt, modifiedAt } = req.body;
+       const { id, title, text, created_at, modified_at } = req.body;
 
     // Validate required fields
-    if (!id || !title || !text || !createdAt || !modifiedAt) {
-      return res.status(400).json({ message: 'id, title, text, createdAt, and modifiedAt are required.' });
+    if (!id || !title || !text || !created_at || !modified_at) {
+      return res.status(400).json({ message: 'id, title, text, created_at, and modified_at are required.' });
     }
 
     // Validate length limits
@@ -52,8 +52,7 @@ export async function updateNote(req, res) {
     if (text.length > 300) return res.status(400).json({ message: 'Text must be at most 300 characters.' });
 
     // Note: date format validation could be added here if needed
-
-    const updated = await updateNoteById(req.user.id, id, title, text, createdAt, modifiedAt); // Update note in DB
+     const updated = await updateNoteById(req.user.id, id, title, text, created_at, modified_at);// Update note in DB
 
     // If note not found or not owned by user
     if (!updated) return res.status(404).json({ message: 'Note not found or not owned by you.' });

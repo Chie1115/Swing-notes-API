@@ -7,12 +7,10 @@ export async function signup(req, res) {
   try {
     const { name, email, password } = req.body;
 
-    // Check if all required fields are present
     if (!name || !email || !password) {
       return res.status(400).json({ message: 'Name, email and password are required' });
     }
 
-    // Check if email is already registered
     const existingUser = await getUserByEmail(email);
     if (existingUser) {
       return res.status(400).json({ message: 'Email already registered' });
@@ -21,17 +19,14 @@ export async function signup(req, res) {
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create user in database
     const user = await createUser(name, email, hashedPassword);
 
     // Remove password from user object before sending response
     delete user.password;
 
-    // Send success response
     res.status(201).json({ message: 'User created', user });
   } catch (error) {
     console.error(error);
-    // Handle unexpected server errors
     res.status(500).json({ message: 'Internal server error' });
   }
 }
